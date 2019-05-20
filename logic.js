@@ -3,7 +3,7 @@
 function searchArtists(artist) {
 
     // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
-    var queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=8ce559d2fd9f4e234a3ac172db2d0ef6&format=json";
+    var queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=8ce559d2fd9f4e234a3ac172db2d0ef6&format=json";
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -72,7 +72,7 @@ function searchArtists(artist) {
   function searchAlbums(artist) {
 
    
-    var queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + artist + "&api_key=8ce559d2fd9f4e234a3ac172db2d0ef6&format=json";
+    var queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + artist + "&api_key=8ce559d2fd9f4e234a3ac172db2d0ef6&format=json";
 
 
      $.ajax({
@@ -118,7 +118,7 @@ function searchArtists(artist) {
 function streamingAccounts(artist) {
 
     //Querying the MusicGraph api for the selected artist
-    var queryURL = "http://api.musicgraph.com/api/v2/artist/suggest?api_key=f195226f9a12a0b87eb1809dfa181da1&prefix=" + artist;
+    var queryURL = "https://api.musicgraph.com/api/v2/artist/suggest?api_key=f195226f9a12a0b87eb1809dfa181da1&prefix=" + artist;
 
     return $.ajax({
         url: queryURL,
@@ -138,7 +138,7 @@ function streamingAccounts(artist) {
 function SocialAccounts(musicgraphID) {
 
   // make URL for recieving social_url's
-        var social ="http://api.musicgraph.com/api/v2/artist/"+ musicgraphID +"/social-urls?api_key=f195226f9a12a0b87eb1809dfa181da1";
+        var social ="https://api.musicgraph.com/api/v2/artist/"+ musicgraphID +"/social-urls?api_key=f195226f9a12a0b87eb1809dfa181da1";
         console.log(social);
 
         $.ajax({
